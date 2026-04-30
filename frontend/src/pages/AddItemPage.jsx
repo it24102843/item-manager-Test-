@@ -7,7 +7,12 @@ function AddItemPage() {
 
   const handleCreate = async (formData) => {
     try {
-      await createItem(formData);
+      // Remove old field name if it exists to prevent conflicts
+      const cleanedData = { ...formData };
+      if (cleanedData["Manufacturer Name"]) {
+        delete cleanedData["Manufacturer Name"];
+      }
+      await createItem(cleanedData);
       navigate("/");
     } catch (error) {
       console.error("Failed to create item", error);

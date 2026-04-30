@@ -5,7 +5,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     initialValues || {
       name: "",
       category: "",
-      "Manufacturer Name": "",
+      manufacturerName: "",
       price: "",
       description: "",
       imageUrl: "",
@@ -36,7 +36,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       <input name="category" value={formData.category} onChange={handleChange} required />
 
       <label>Manufacturer Name</label>
-      <input name="Manufacturer Name" value={formData["Manufacturer Name"]} onChange={handleChange} required />
+      <input name="manufacturerName" value={formData.manufacturerName} onChange={handleChange} required />
 
       <label>Price</label>
       <input

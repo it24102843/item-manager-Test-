@@ -7,14 +7,9 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Item name is required"],
       trim: true,
     },
-    category:  {
+    category: {
       type: String,
-      required: [true, " Category is required"],
-      trim: true,
-    },
-    manufacturerName: {
-      type: String,
-      required: [true, "Manufacturer is required"],
+      required: [true, "Category is required"],
       trim: true,
     },
     price: {
@@ -32,8 +27,13 @@ const itemSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
+    manufacturername: {
+      type: String,
+      required: [true, "Manufacturer name is required"],
+      trim: true,
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Item", itemSchema);

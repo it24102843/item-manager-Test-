@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
 function ItemCard({ item, onDelete }) {
-  // Handle backward compatibility for old field name
-  const manufacturerName = item.manufacturerName || item["Manufacturer Name"] || "N/A";
-
   return (
     <div className="card">
       <img
@@ -13,7 +10,7 @@ function ItemCard({ item, onDelete }) {
       />
       <h3>{item.name}</h3>
       <p><strong>Category:</strong> {item.category}</p>
-      <p><strong>Manufacturer Name:</strong> {manufacturerName}</p>
+      <p><strong>Manufacturer Name:</strong> {item.manufacturername}</p>
       <p><strong>Price:</strong> ${item.price}</p>
       <p>{item.description}</p>
 
